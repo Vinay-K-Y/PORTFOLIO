@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=W6QkU1aiLTenK_FaRbUPlbBN5bRkxEh5ZE9HK_rbAhGfZfkVPnPf_v6Qh2Xqq-b_1Y0H6DwXYqlCIAw9pfxmvQ" charset="UTF-8"></script></head>
+<body>
+    <div id="header">
+        <div id="container">
+            <nav>
+                <img src="/images/logo.png.png" class="logo"> 
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#">Skills</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    
+                </ul>
+            </nav>
+            <div class="headertext">
+                <h1>
+                    AIML enthusiast 
+                </h1>
+                <p>
+                    Hello,I am <span>Vinay K Y</span><br>AI engineering student.
+                </p>
+            </div>
+        </div>
+    </div>
+
+<!-- -----------About------------ -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="abt-col-1">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        Self driven and knowledgeable computer science student with a motivated approach.
+                        Committed to contributing my expertise in dynamic and productive environment
+                    </p>
+                    <div class="tab-titles">
+                        <p class="links activelink" onclick="opentab('skills')">Skills</p>
+                        <p class="links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tabconts activetab" id="skills">
+                        <ul>
+                            <li><span>Web Development</span><br>Development of responsive website</li>
+                            <li><span>JAVA </span><br>Well versed with JAVA programming language</li>
+                            <li><span>DS</span><br>Data Structures in C programming language</li>
+                        </ul>
+                    </div>
+                    <div class="tabconts" id="education">
+                        <ul>
+                            <li><span>2023-Current</span><br>Pursuing a degree in engineering.</li>
+                            <li><span>2021-2023 </span><br>Completed higher secondary education at Narayana PU College.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="abt-col-2">
+                    <img src="./images/mypic.jpg.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ------------Contact---------------->
+     <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>vinayky652005@gmail.com</p>
+                    <p><i class="fa-solid fa-mobile"></i>9972304305</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/vinayvinu_18/"><i class="fab fa-instagram"></i></a>
+                        <a href=""><i class="fab fa-linkedin"></i></a>
+                        <a href=""><i class="fab fa-github"></i></a>
+                    </div>
+                    <a href=""Download class="btn">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your name" required>
+                        <input type="email" name="email" placeholder="Your email" required>
+                        <textarea name="your meassage" rows="6"placeholder="Your Message"></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+     </div>
+    <script>
+        var links=document.getElementsByClassName("links");
+        var tabconts=document.getElementsByClassName("tabconts");
+
+        function opentab(tabname) {
+            for(link of links){
+                link.classList.remove("activelink");
+            }
+            for(tabcont of tabconts){
+                tabcont.classList.remove("activetab");
+            }
+            event.currentTarget.classList.add("activelink");
+            document.getElementById(tabname).classList.add('activetab');
+        }
+
+
+    </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
